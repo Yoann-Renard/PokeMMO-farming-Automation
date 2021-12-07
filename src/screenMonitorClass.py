@@ -1,5 +1,3 @@
-from types import FunctionType
-from typing import Coroutine
 from PIL import Image
 import pyautogui
 import pytesseract
