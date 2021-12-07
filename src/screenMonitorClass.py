@@ -65,7 +65,3 @@ class screenMonitor():
 
     async def stop(self) -> bool:
         self.running_state = False
-
-
-a = screenMonitor('aa')
-a.run()
