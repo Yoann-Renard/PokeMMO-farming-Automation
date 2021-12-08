@@ -1,10 +1,15 @@
 import random as rand
+import json
 
 class playerMovement():
 
     def __init__(self) -> None:
-        pass
-
+        with open(r"configs\keysConfig.json", 'r') as j:
+            config = json.load(j)
+            keyUp = config['up']
+            keyDown = config['down']
+            keyLeft = config['left']
+            keyRight = config['right']
     def up(self):
         return -2
 
