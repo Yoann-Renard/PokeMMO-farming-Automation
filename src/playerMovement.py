@@ -6,10 +6,10 @@ class playerMovement():
     def __init__(self) -> None:
         with open(r"configs\keysConfig.json", 'r') as j:
             config = json.load(j)
-            keyUp = config['up']
-            keyDown = config['down']
-            keyLeft = config['left']
-            keyRight = config['right']
+            self.keyUp = config['up']
+            self.keyDown = config['down']
+            self.keyLeft = config['left']
+            self.keyRight = config['right']
     def up(self):
         return -2
 
