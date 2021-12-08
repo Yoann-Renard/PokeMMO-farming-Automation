@@ -3,11 +3,12 @@ from screenMonitorClass import screenMonitor
 
 async def main():
     moni = screenMonitor()
-    await moni.run("le mec zen")
-    print("sleeping")
-    await asyncio.sleep(6)
-    print("stopped")
-    await moni.stop()
+    moni.run("le mec zen")
+    while moni.running_state:
+        print('hehe')
+        await asyncio.sleep(1)
+    else:
+        moni.stop()
 
 
 try:
