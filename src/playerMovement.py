@@ -10,6 +10,7 @@ class playerMovement():
             self.keyDown = config['down']
             self.keyLeft = config['left']
             self.keyRight = config['right']
+
     def up(self):
         return -2
 

@@ -1,6 +1,6 @@
 {
-    "up":"",
-    "down":"",
-    "left": "",
-    "right": ""
+    "up":"z",
+    "down":"s",
+    "left": "q",
+    "right": "d"
 }
