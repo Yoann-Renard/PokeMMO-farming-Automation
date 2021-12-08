@@ -59,7 +59,7 @@ class screenMonitor():
             self._monitor(target)
         )
 
-    def stop(self) -> bool:
+    def stop(self):
         return asyncio.create_task(
             self._stopMonitor()
         )
