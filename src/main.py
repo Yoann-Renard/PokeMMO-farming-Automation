@@ -2,8 +2,8 @@ import asyncio
 from screenMonitorClass import screenMonitor
 
 async def main():
-    moni = screenMonitor("jpp de javascript")
-    await moni.run()
+    moni = screenMonitor()
+    await moni.run("le mec zen")
 
 
 try:
