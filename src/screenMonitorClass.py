@@ -32,7 +32,7 @@ class screenMonitor():
             else:
                 return False
 
-    async def _monitor(self, function) -> bool:
+    async def _monitor(self) -> bool:
         self.running_state = True
         try:
             with Image.open(self.target) as f:
@@ -47,19 +47,16 @@ class screenMonitor():
                 im = pyautogui.screenshot()
                 str_on_screen = str(pytesseract.image_to_string(im)).lower()
                 if str_on_screen.find(text_to_search) != -1:
-                    return True
+                    print(f"{self.target} found on screen !")
                 print(f"Monitoring {text_to_search}...")
                 await asyncio.sleep(2)
             else:
                 print(f'Monitoring of {text_to_search} canceled')
 
     async def run(self):
-        bool_ = bool
-        task = asyncio.gather(
+        await asyncio.gather(
             self._monitor()
         )
-        bool_ = await task
-        return bool_
 
     async def stop(self) -> bool:
         self.running_state = False
