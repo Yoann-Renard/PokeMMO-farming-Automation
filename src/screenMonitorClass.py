@@ -52,10 +52,15 @@ class screenMonitor():
             else:
                 print(f'Monitoring of {text_to_search} canceled')
 
-    async def run(self,target: str):
-        await asyncio.gather(
+    def run(self,target: str):
+        return asyncio.create_task(
             self._monitor(target)
         )
 
     async def stop(self) -> bool:
+        await asyncio.create_task(
+            self._stopMonitor()
+        )
+        
+    async def _stopMonitor(self):
         self.running_state = False
