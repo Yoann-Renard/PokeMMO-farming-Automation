@@ -2,6 +2,7 @@ import random as rand
 import json
 import pyautogui
 import pydirectinput
+
 class playerMovement():
 
     def __init__(self) -> None:

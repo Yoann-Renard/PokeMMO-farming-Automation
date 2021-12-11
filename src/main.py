@@ -3,7 +3,7 @@ from screenMonitorClass import screenMonitor
 
 async def main():
     moni = screenMonitor()
-    moni.run("le mec zen")
+    moni.run("res/targets/test.png")
     while moni.running_state:
         print('hehe')
         await asyncio.sleep(1)

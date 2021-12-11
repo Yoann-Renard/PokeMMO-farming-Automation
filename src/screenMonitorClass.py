@@ -32,14 +32,16 @@ class screenMonitor():
             else:
                 return False
 
-    async def _monitor(self, target: str) -> bool:
+    async def _monitor(self, target: str) -> bool:  # FIXME
+        print("moni up")
         try:
-            with Image.open(target) as f:
-                img = f
-            if pyautogui.locateOnScreen(img) != None:
-                return True
-            else:
-                return False
+            while self.running_state:
+                print('while')
+                if pyautogui.locateOnScreen(target) != None:
+                    print(f'image {target} found !')
+                    self.running_state = False
+                else:
+                    await asyncio.sleep(2)
         except FileNotFoundError or FileExistsError:
             text_to_search = target.lower()
             while self.running_state:
